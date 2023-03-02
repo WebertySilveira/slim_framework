@@ -2,22 +2,21 @@
 
 namespace app\traits;
 
+use Twig\Loader\FilesystemLoader;
+
 trait View
 {
     protected $twig;
 
     protected function twig()
     {
-        $loader = new \Twig\Loader\FilesystemLoader('../app/views');
+        $loader = new FilesystemLoader(dirname(__DIR__, 1) . "/views");
         $this->twig = new \Twig\Environment($loader, [
             "debug" => true
         ]);
     }
 
-    protected function functions()
-    {
-
-    }
+    protected function functions(){}
 
     protected function load()
     {

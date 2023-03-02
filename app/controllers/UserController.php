@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
-class UserController
+class UserController extends Controller
 {
     public function index()
     {
-        echo "Index";
+        $this->view("user", [
+            "title" => "Usuário"
+        ]);
     }
 
     public function create()

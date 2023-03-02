@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
-class BookController
+class BookController extends Controller
 {
     public function index()
     {
-        echo "Index";
+        $this->view("book", [
+            "title" => "Livros"
+        ]);
     }
 
     public function create()
